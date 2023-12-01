@@ -2,6 +2,50 @@
 #include <fstream>
 #include <iomanip>
 
+using namespace std;
+
+void mainMenu();
+
+class Management
+{
+public:
+	Management()
+	{
+		mainMenu();
+	}
+};
+
+class Details
+{
+public:
+	static string name, gender;
+	int phoneNo;
+	int age;
+	string add;
+	static int cId;
+	char arr[100];
+
+	void information()
+	{
+		cout << "\nEnter the customer ID:";
+		cin >> cId;
+		cout << "\nEnter the name :";
+		cin >> name;
+		cout << "\nEnter the age :";
+		cin >> age;
+		cout << "\n Address :";
+		cin >> add;
+		cout << "\n Gender :";
+		cin >> gender;
+		cout << "Your details are saved with us\n"
+			 << endl;
+	}
+};
+
+int Details::cId;
+string Details::name;
+string Details::gender;
+
 class registration
 {
 public:
@@ -16,7 +60,7 @@ public:
 
 		for (int a = 0; a < 6; a++)
 		{
-			cout << (a + 1) << ".flight to" << flightN[a] << endl;
+			cout << (a + 1) << ".flight to " << flightN[a] << endl;
 		}
 
 		cout << "\nWelcome to the Airlines!" << endl;
@@ -538,4 +582,10 @@ void mainMenu()
 		break;
 	}
 	}
+}
+
+int main()
+{
+	Management Mobj;
+	return 0;
 }
